@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+</head>
+
+<body id="back">
+    <form action="#">
+        <nav class="nav">
+            <img src="https://cdn.pixabay.com/photo/2017/03/05/01/02/stethoscope-2117344_1280.png" alt="" height="50px">
+            <button id="modo" onclick="mudarCor">
+                <img src="https://cdn-icons-png.flaticon.com/512/1229/1229467.png" alt="" height="40px">
+                <form action="#" method="post">
+                    <textarea name="comentarios" id="comentarios" rows="2"
+                        placeholder="Escreva Seu Comentário"></textarea>
+                    <button class="summit"="submit">Enviar</button>
+                </form>
+        </nav>
+    </form>
+    <main>
+        <section id="container">
+            <header>
+                <h1>Indice de massa corporal</h1>
+            </header>
+            <div class="content">
+                <p>A classificação do índice de massa corporal (IMC) pode ajudar a identificar problemas de
+                    obesidade ou
+                    desnutrição, em crianças, adolescentes, adultos e idosos.
+
+                    Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal
+                    que
+                    deve ter para garantir uma melhor qualidade de vida. Ter um peso dentro do intervalo de peso
+                    ideal
+                    ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão.
+
+                    Coloque os seus dados na calculadora e calcule o seu IMC:</p>
+            </div>
+            <!-- Calculadora imc -->
+            <div class="calc">
+                <form class="form" action="#">
+                    <label for="altura">Altura (cm)</label>
+                    <input type="number" name="altura" id="altura" placeholder="  Ex: 1,70">
+
+                    <label for="peso"> Peso (kg)</label>
+                    <input type="number" name="peso" id="peso" placeholder="  Ex: 90">
+
+                </form>
+                <p>Seu índice de massa corporal é: <span id="resultado"></span></p>
+
+                <button class="button" onclick="calcImc()"> Calcular IMC </button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- javascript -->
+    <script>
+        function calcImc() {
+            const altura = parseFloat(document.getElementById("altura").value);
+            const peso = parseFloat(document.getElementById("peso").value);
+
+            const resultado = peso / (altura ** 2);
+
+            document.getElementById("resultado").textContent = resultado.toFixed
+                (2)
+        }
+        function mudarCor() {
+            const back = document.getElementById("back")
+            back.style.backgroundColor = back.style.backgroundColor === "white" ? "black" : "white";
+        }
+
+    </script>
+
+    <!-- tabela imc -->
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>IMC</th>
+                <th>Classificação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th> Menor que 18,5 </th>
+                <th> Magreza </th>
+            </tr>
+            <tr>
+                <th> 18,5 a 24,9 </th>
+                <th> Normal </th>
+            </tr>
+            <tr>
+                <th> 25 a 29,9 </th>
+                <th> Sobrepeso </th>
+            </tr>
+            <tr>
+                <th> 30 a 34,9 </th>
+                <th> Obesidade Grau 1 </th>
+            </tr>
+            <tr>
+                <th> 35 a 39,9 </th>
+                <th> Obesidade Grau 2 </th>
+            </tr>
+            <tr>
+                <th> Maior que 40 </th>
+                <th> Obesidade Grau 3</th>
+            </tr>
+        </tbody>
+
+    </table> -->
+</body>
+
+</html>
